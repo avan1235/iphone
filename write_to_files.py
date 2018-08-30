@@ -1,5 +1,5 @@
 from read_data import get_price
-from act_time import get_string_time, get_minute
+from act_time import get_string_time, get_minute,get_second
 
 
 def write_to_files_thread(list_of_files, write_minutes, operation_minutes):

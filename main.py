@@ -5,13 +5,13 @@ from send_ftp import send_file_thread
 
 shops_list = ['MediaExpert', 'MediaMarkt', 'morele', 'RTVEuroAGD', 'Sferis', 'Vobis', 'XKOM']
 
-write_every_minute = 30
-write_time_spend = 5
+write_every_minute = 0
+write_time_spend = 10
 
-plot_every_minute = 35
+plot_every_minute = 15
 plot_time_spend = 5
 
-send_every_minute = 40
+send_every_minute = 25
 send_time_spend = 5
 
 

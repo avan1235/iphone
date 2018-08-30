@@ -1,5 +1,5 @@
 import ftplib
-from act_time import get_minute
+from act_time import get_minute, get_second
 
 def send_file(name_file):
     session = ftplib.FTP('files.000webhost.com', '''username''', '''password''')
