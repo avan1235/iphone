@@ -1,4 +1,4 @@
-#iPhone pricing monitor
+# iPhone pricing monitor
 
 * install dependiences
 ```bash
