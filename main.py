@@ -1,29 +1,10 @@
-import threading
-from write_to_files import write_to_files_thread
-from plot import create_plot_thread
-from send_ftp import send_file_thread
+from write_to_files import write_to_files
+from plot import create_plot
+from send_ftp import send_file
 
 shops_list = ['MediaExpert', 'MediaMarkt', 'morele', 'RTVEuroAGD', 'Sferis', 'Vobis', 'XKOM']
+image_name = "plot.png"
 
-write_every_minute = 0
-write_time_spend = 10
-
-plot_every_minute = 15
-plot_time_spend = 5
-
-send_every_minute = 25
-send_time_spend = 5
-
-
-arguments_write = (shops_list, write_every_minute, write_time_spend)
-arguments_plot = (shops_list, "plot.png", plot_every_minute, plot_time_spend)
-arguments_send = ("plot.png", send_every_minute, send_time_spend)
-
-
-thread_write_to_file = threading.Thread(target=write_to_files_thread, args=arguments_write)
-thread_plot = threading.Thread(target=create_plot_thread, args=arguments_plot)
-thread_send = threading.Thread(target=send_file_thread, args=arguments_send)
-
-thread_write_to_file.start()
-thread_plot.start()
-thread_send.start()
+write_to_files(shops_list)
+create_plot(shops_list, image_name)
+send_file(image_name)
