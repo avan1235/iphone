@@ -2,6 +2,7 @@ from lxml import html
 import requests
 import json
 
+
 def get_price_from_jsonld(page):
     tree = html.fromstring(page.content)
     for text in tree.xpath('//script[@type="application/ld+json"]//text()'):
@@ -11,6 +12,7 @@ def get_price_from_jsonld(page):
                 return float(data['offers']['price'])
     return 0
 
+
 def get_price_from_microdata(page, place):
     tree = html.fromstring(page.content)
     data = tree.xpath('//*[@itemprop="price"]/' + place)
@@ -19,8 +21,10 @@ def get_price_from_microdata(page, place):
         return min(data)
     return 0
 
+
 def get_price_from_microdata_text(page):
     return get_price_from_microdata(page, '/text()')
+
 
 def get_price_from_microdata_content(page):
     return get_price_from_microdata(page, '@content')
