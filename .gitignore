@@ -1,0 +1,5 @@
+/.idea
+/data
+/server
+/__pycache__
+*.pyc
