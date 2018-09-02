@@ -1,3 +1,5 @@
+import matplotlib
+matplotlib.use("Pdf")
 import matplotlib.pyplot as plt
 from matplotlib import style
 import matplotlib.ticker as ticker
